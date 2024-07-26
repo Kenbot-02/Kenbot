@@ -1,0 +1,21 @@
+module.exports = {
+ config: {
+ name: "pogisigena2",
+ version: "1.0",
+ author: "Ken",
+ countDown: 3,
+ role: 0,
+ shortDescription: "no prefix",
+ longDescription: "no prefix",
+ category: "no prefix",
+ }, 
+ onStart: async function(){}, 
+ onChat: async function({ event, message, getLang }) {
+ if (event.body && event.body.toLowerCase() === "pogisigena") {
+ return message.reply({
+ body: "Pogi sige na",
+ attachment: await global.utils.getStreamFromURL("https://i.imgur.com/iYtSNFD.mp4")
+ });
+ }
+ }
+}
